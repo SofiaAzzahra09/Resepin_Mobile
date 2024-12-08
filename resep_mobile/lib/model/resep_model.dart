@@ -21,7 +21,7 @@ List<MenuMakanan> menuMakananList = [
   MenuMakanan(
     id: 1,
     namaMakanan: 'Laksa Cianjur',
-    image: ['https://i.pinimg.com/736x/06/6c/be/066cbe29fe7a0ab02c5db22f0b05bdd7.jpg'],
+    image: ['https://ucarecdn.com/e44ef997-c43b-4d7d-a07c-2eb1e48e1397/laksa.jpg'],
     lokasi: 'Cianjur',
     bahan: 'Mie kuning, santan, oncom, tauge, daun bawang, seledri.',
     alat: 'Panci, sendok, mangkok.',
@@ -32,7 +32,7 @@ List<MenuMakanan> menuMakananList = [
   MenuMakanan(
     id: 2,
     namaMakanan: 'Manisan Cianjur',
-    image: ['https://i.pinimg.com/736x/ee/26/ec/ee26ecc86420d96b9abba2f25d430397.jpg'],
+    image: ['https://ucarecdn.com/814b92a6-a34a-4777-bf1a-beb2630fce25/manisan.jpg'],
     lokasi: 'Cianjur',
     bahan: 'Buah mangga, gula pasir, air, garam.',
     alat: 'Pisau, toples, kompor.',
@@ -43,7 +43,7 @@ List<MenuMakanan> menuMakananList = [
   MenuMakanan(
     id: 3,
     namaMakanan: 'Tauco Cianjur',
-    image: ['https://i.pinimg.com/736x/06/9a/c3/069ac37fb5466f5777172f582ef1a198.jpg'],
+    image: ['https://ucarecdn.com/f0b855bd-66c5-49e5-af79-d0f48c6f569d/tauco.jpg'],
     lokasi: 'Cianjur',
     bahan: 'Tauco, tempe, cabai, bawang merah, gula.',
     alat: 'Wajan, spatula, kompor.',
@@ -54,7 +54,7 @@ List<MenuMakanan> menuMakananList = [
   MenuMakanan(
     id: 4,
     namaMakanan: 'Sate Maranggi Cianjur',
-    image: ['https://i.pinimg.com/736x/d1/fb/1b/d1fb1b6bfdf84d580022f238700c3510.jpg'],
+    image: ['https://ucarecdn.com/dcb929be-0f15-4919-8a41-c82171e0b657/satemaranggi.jpg'],
     lokasi: 'Cianjur',
     bahan: 'Daging sapi, kecap, bawang putih, jahe, merica.',
     alat: 'Tusuk sate, panggangan.',

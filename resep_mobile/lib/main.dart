@@ -1,6 +1,7 @@
 import 'package:resep_mobile/screens/detail_screen.dart';
 import 'package:resep_mobile/screens/home_page.dart';
 import 'package:resep_mobile/screens/listResep_screen.dart';
+import 'package:resep_mobile/screens/profil_screen.dart';
 import 'package:resep_mobile/screens/registration_screen.dart';
 import 'package:resep_mobile/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class ResepinApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner : false,
-      home: ListResepPage(),
+      home: ProfilePage(),
     );
   }
 }

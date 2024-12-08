@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:resep_mobile/model/resep_model.dart';
+import 'package:resep_mobile/screens/detail_screen.dart';
+import 'package:resep_mobile/screens/listResep_screen.dart';
 
 const kBackgroundColor = Colors.orange;
-const blueTextColor = Colors.white;
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,21 +68,32 @@ class HomePage extends StatelessWidget {
             // Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: const Text(
-                "Lihat Semua",
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: kBackgroundColor,
+              child: GestureDetector(
+                onTap: () {
+                  // Arahkan ke ListResepPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ListResepPage(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  "Lihat Semua",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: kBackgroundColor,
+                  ),
                 ),
               ),
             ),
             const SizedBox(height: 8.0),
             GridView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              shrinkWrap: true, 
+              shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 4, 
+              itemCount: 4, // Tampilkan hanya 4 item
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
@@ -90,36 +102,47 @@ class HomePage extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 final menu = menuMakananList[index];
-                return Container(
-                  decoration: BoxDecoration(
-                    color: kBackgroundColor,
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image.network(
-                          menu.image![0],
-                          height: 100.0,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return const Icon(Icons.error, color: Colors.red);  
-                          },
-                        ),
+                return GestureDetector(
+                  onTap: () {
+                    // Arahkan ke DetailResepPage
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailResepPage(resep: menu),
                       ),
-                      const SizedBox(height: 8.0),
-                      Text(
-                        menu.namaMakanan,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: kBackgroundColor,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.network(
+                            menu.image![0],
+                            height: 100.0,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Icon(Icons.error, color: Colors.red);
+                            },
+                          ),
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                        const SizedBox(height: 8.0),
+                        Text(
+                          menu.namaMakanan,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
